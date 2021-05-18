@@ -1,0 +1,22 @@
+int trigpin=2;
+int echopin=4;
+
+
+void setup()
+{
+  pinMode(trigpin,OUTPUT);
+  pinMode(echopin,INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigpin,HIGH);
+  delay(1000);
+  digitalWrite(trigpin,LOW);
+  float duration=pulseIn(echopin,HIGH);
+  float distance=duration*0.0343/2;
+  Serial.print("The distance is ");
+  Serial.println(distance);
+  delay(1000);
+}
