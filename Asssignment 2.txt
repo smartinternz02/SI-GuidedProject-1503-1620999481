@@ -1,3 +1,6 @@
+#include <Servo.h>
+Servo myservo
+
 int trigpin=2;
 int echopin=4;
 
